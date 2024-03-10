@@ -1,0 +1,66 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Credentials{
+  id             String         @id @default(uuid())
+  username String @unique 
+  password String @unique
+}
+
+model User {
+  id             String         @id @default(uuid())
+  name           String
+  age            Int
+  familyMonitor  FamilyMonitors @relation(fields: [familyMonitorId], references: [id])
+  familyMonitorId String
+  friendCode     String         @unique @default(uuid())
+  friends        Friends        @relation(fields: [friendCode], references: [friendCode])
+  sentMessages   Message[]      @relation("sentMessages")
+  receivedMessages Message[]    @relation("receivedMessages")
+}
+
+
+model FamilyMonitors {
+  id         String      @id @default(uuid())
+  familyCode String      @unique @default(uuid())
+  users      User[]
+}
+
+
+model Friends {
+  id         String @id @default(uuid())
+  friendCode String @unique @default(uuid())
+  users      User[]
+}
+
+
+model Message {
+  id           String   @id @default(uuid())
+  sender       User     @relation("sentMessages", fields: [senderCode], references: [friendCode])
+  senderCode   String
+  receiver     User     @relation("receivedMessages", fields: [receiverCode], references: [friendCode])
+  receiverCode String
+  contents     String?
+  timeSent     DateTime @default(now())
+}
+
+model Calls{
+  id String @id @default(uuid())
+  reciever String?
+  sender String?
+  duration Int?
+  data Bytes[]
+}

@@ -3,7 +3,7 @@
   import Contacts from './lib/Contacts.svelte';
 </script>
 
-<main>
+<main>  
   <Menu />
   <article>
     <Contacts/>
@@ -19,5 +19,14 @@
     align-items: center;
     justify-content: start;
     height:100%;
+  }
+
+  article{
+    margin-top:10px;
+    width:98%;
+    height:85%;
+    min-height:250px;
+    background-color:grey;
+    border-radius:7px;
   }
 </style>

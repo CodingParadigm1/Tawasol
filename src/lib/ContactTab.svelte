@@ -24,13 +24,16 @@
     }
     main{
         padding:5px;
-        background-color: grey;
+        background-color: whitesmoke;
         width:98%;
         height:40px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         border-radius:7px;
+    }
+    main:hover{
+        background-color: azure;
     }
     section#options{
         display: flex;
