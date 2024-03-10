@@ -1,11 +1,15 @@
 <script>
+
     import ContactTab from "./ContactTab.svelte";
 
-    let contacts = []; 
+    export let contacts = []; 
+
 </script>
 
 <main>
     <section>
-        <ContactTab name={"default"} age={5}/>
+        {#each contacts as contact}
+            <ContactTab name={contact.name} age={contact.age}/>
+        {/each}
     </section>
 </main>
