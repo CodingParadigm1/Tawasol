@@ -1,8 +1,7 @@
-# Svelte + Vite
+# Tawasol
+## The ideal way to meet your partner in a safe and halal way. This app is halal because conversations are a limited privacy based on who each person wants included in the conversation. This is a family values centered app. The way Allah (swt) intended. 
 
-This template should help get you started developing with Tauri and Svelte in Vite.
+### What will this app offer?
 
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
-
+ - Texting and intuitive connection between families and persons of interest.
+ - Personal informatino not required 
