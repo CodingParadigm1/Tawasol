@@ -1,12 +1,16 @@
 <script>
   import Menu from './lib/Menu.svelte'
   import Contacts from './lib/Contacts.svelte';
+    import Settings from './lib/Settings.svelte';
+
+  let pages = [Contacts, Settings]; 
+  let current_page = 0; 
 </script>
 
 <main>  
-  <Menu />
+  <Menu bind:counter = {current_page}/>
   <article>
-    <Contacts/>
+      <svelte:component this={pages[current_page]}/>
   </article>
 </main>
 
@@ -17,7 +21,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
     height:100%;
   }
 
@@ -28,5 +31,6 @@
     min-height:250px;
     background-color:grey;
     border-radius:7px;
+    overflow: hidden;
   }
 </style>

@@ -25,7 +25,7 @@
     main{
         padding:5px;
         background-color: whitesmoke;
-        width:98%;
+        width:90%;
         height:40px;
         display: flex;
         align-items: center;
@@ -40,5 +40,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+    }
+    @media only screen and (max-width: 600px){
+        main{
+            width:96%;
+        }
     }
 </style>

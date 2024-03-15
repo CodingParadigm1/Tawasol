@@ -2,7 +2,7 @@
 
     import ContactTab from "./ContactTab.svelte";
 
-    export let contacts = [{"name": "Tom", "age": 98}]; 
+    export let contacts = [{"name": "Tom", "age": 98},{"name": "Tom", "age": 98},{"name": "Tom", "age": 98},{"name": "Tom", "age": 98},{"name": "Tom", "age": 98},{"name": "Tom", "age": 98},{"name": "Tom", "age": 98},{"name": "Tom", "age": 98},]; 
 
 </script>
 
@@ -16,18 +16,31 @@
 
 
 <style>
-    
     main{
-        width:99%;
+        padding: 8px;
+        padding-top:5px;
+        padding-bottom:0px;
+        width:100%;
         height:97%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        overflow: auto;
+        overflow-x:hidden;
     }
 
     section{
-        padding:2px;
-        width:97%;
+        width:95%;
+        height:100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:5px;
+    }
+    @media only screen and (max-width: 600px){
+        main{
+            padding:4px;
+        }
     }
 
 </style>
